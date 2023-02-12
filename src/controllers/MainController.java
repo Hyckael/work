@@ -20,6 +20,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import animatefx.animation.*;
 
 public class MainController implements Initializable{
 	
@@ -100,12 +101,16 @@ public class MainController implements Initializable{
 			stage.show();
     	}
     	if (event.getSource().equals(btnIns)) {
+    		new ZoomOut(pageCo).play();
 			pageIns.toFront();
+			new BounceInRight(pageIns).play();
 		}
     	if (event.getSource().equals(btnInsNext)) {
 			PageInsFinal.toFront();
+			new BounceInRight(PageInsFinal).play();
 		}
     	if (event.getSource().equals(btnInsValid)) {
+    		new ZoomIn(pageCo).play();
 			pageCo.toFront();
 		}
     }
@@ -113,10 +118,12 @@ public class MainController implements Initializable{
     @FXML
     void goBack(MouseEvent event) {
     	if (event.getSource().equals(btnBack)) {
+    		new ZoomIn(pageCo).play();
 			pageCo.toFront();
 		}
     	if (event.getSource().equals(btnBack1)) {
-			pageIns.toFront();
+    		pageIns.toFront();
+			new BounceInLeft(pageIns).play();
 		}
     }
 

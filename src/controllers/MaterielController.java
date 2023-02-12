@@ -114,13 +114,23 @@ public class MaterielController implements Initializable {
     void ajouterMateriel(ActionEvent event) {
     	
     	Alert alert;
+    	
+    	
+    	
 		if (nomMateriel.getText().isEmpty() || descMateriel.getText().isEmpty() || prixMateriel.getText().isEmpty() || quantiteMateriel.getText().isEmpty()) {
 			alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Attention !!!");
 			alert.setHeaderText(null);
 			alert.setContentText("Remplissez tous les champs s'il vous plait !");
 			alert.showAndWait();
-		} else {
+		} else if (prixMateriel.getText().matches("[+-]?\\d*(\\.\\d+)?") == false || quantiteMateriel.getText().matches("[+-]?\\d*(\\.\\d+)?") == false) {
+			alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Attention !!!");
+			alert.setHeaderText(null);
+			alert.setContentText("Entrer des nombres valides s'il vous plait !");
+			alert.showAndWait();
+		}
+		else {
 			Boolean verif = false;
 			for (Materiel e : materielDoa.getAllmateriel()) {
 				if (e.getNomMateriel().equalsIgnoreCase(nomMateriel.getText())) {
@@ -131,7 +141,7 @@ public class MaterielController implements Initializable {
 				alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Error Message");
 				alert.setHeaderText(null);
-				alert.setContentText("Le matériel : " + nomMateriel.getText() + " exite déja. Entrer un autre nom matériel !");
+				alert.setContentText("Le matériel : " + nomMateriel.getText() + " exite déjà. Entrer un autre nom matériel !");
 				alert.showAndWait();
 			} else {
 //				idMateriel = Integer.parseInt(idMat.getText());
@@ -212,7 +222,13 @@ public class MaterielController implements Initializable {
 			alert.setHeaderText(null);
 			alert.setContentText("Remplissez tous les champs s'il vous plait ");
 			alert.showAndWait();
-		} else {
+		} else if (prixMateriel.getText().matches("[+-]?\\d*(\\.\\d+)?") == false || quantiteMateriel.getText().matches("[+-]?\\d*(\\.\\d+)?") == false) {
+			alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Attention !!!");
+			alert.setHeaderText(null);
+			alert.setContentText("Entrer des nombres valides s'il vous plait !");
+			alert.showAndWait();
+		}else {
 			alert = new Alert(AlertType.CONFIRMATION);
 			alert.setTitle("CONFIRMATION MESSAGE");
 			alert.setHeaderText(null);
@@ -247,9 +263,9 @@ public class MaterielController implements Initializable {
     	Alert alert;
 		if (nomMateriel.getText().isEmpty()) {
 			alert = new Alert(AlertType.ERROR);
-			alert.setTitle("Error Message");
+			alert.setTitle("Error");
 			alert.setHeaderText(null);
-			alert.setContentText("Selectionner ou entrer un nom du Matériel !");
+			alert.setContentText("Selectionner la ligne dans la tableau !");
 			Optional<ButtonType> option = alert.showAndWait();
 		} else {
 			Boolean verif = false;
@@ -259,39 +275,35 @@ public class MaterielController implements Initializable {
 					verif = true;
 					id = e.getIdMateriel();
 				}
-				if (verif == true) {
-					alert = new Alert(AlertType.CONFIRMATION);
-					alert.setTitle("CONFIRMATION MESSAGE");
-					alert.setHeaderText(null);
-					alert.setContentText("Êtes-vous sûr de vouloir supprimer le Matériel : " + nomMateriel.getText()+ " ? Cette action est irreversible !");
-					Optional<ButtonType> option = alert.showAndWait();
-					if (option.get().equals(ButtonType.OK)) {
-						materielDoa.deletemateriel(id);
-						clearMateriel();
-						materielShowList();				}
-				} else {
-					alert = new Alert(AlertType.ERROR);
-					alert.setTitle("Error Message");
-					alert.setHeaderText(null);
-					alert.setContentText("Le Matériel: " + nomMateriel.getText() + " n'existe pas");
-					alert.showAndWait();
-					return;
-				}
 			}
-			
+			if (verif == true) {
+				alert = new Alert(AlertType.CONFIRMATION);
+				alert.setTitle("CONFIRMATION MESSAGE");
+				alert.setHeaderText(null);
+				alert.setContentText("Êtes-vous sûr de vouloir supprimer le Matériel : " + nomMateriel.getText()+ " ? Cette action est irreversible");
+				Optional<ButtonType> option = alert.showAndWait();
+				if (option.get().equals(ButtonType.OK)) {
+					materielDoa.deletemateriel(id);
+					clearMateriel();
+					materielShowList();				}
+			} else {
+				alert = new Alert(AlertType.ERROR);
+				alert.setTitle("Error");
+				alert.setHeaderText(null);
+				alert.setContentText("Le Matériel: " + nomMateriel.getText() + " n'existe pas ");
+				alert.showAndWait();
+				return;
+			}
 		}
     }
     
     @FXML
     void refresh(MouseEvent event) throws IOException {
     	if (event.getSource().equals(btnRefresh)) {
+    		clearMateriel();
     		materielShowList();
     	}
     }
-    
-    public static void main(String[] args) {
-		
-	}
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

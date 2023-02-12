@@ -134,7 +134,7 @@ public class MaterielDao implements IMaterielDoa {
 			prepare = connect.prepareStatement(sql);
 			result = prepare.executeQuery();
 			while (result.next()) {
-				materiel = new Materiel(result.getString("NOM_MATERIEL"), result.getString("DESC_MATERIEL"), result.getFloat("PRIX"),result.getInt("QUANTITE"));
+				materiel = new Materiel(result.getInt("ID_MATERIEL"),result.getString("NOM_MATERIEL"), result.getString("DESC_MATERIEL"), result.getFloat("PRIX"),result.getInt("QUANTITE"));
 				listMateriel.add(materiel);
 			}
 		} catch (SQLException e) {

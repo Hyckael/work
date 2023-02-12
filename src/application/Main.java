@@ -20,6 +20,7 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			Image image = new Image("/assets/icons8_rolls_royce_512px.png");
 			primaryStage.getIcons().add(image);
+			new animatefx.animation.FadeInDown(root).play();
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();

@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="pageClients" maxHeight="-Infinity" maxWidth="979.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="979.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClientsController">
+<BorderPane fx:id="pageClients" maxHeight="-Infinity" maxWidth="979.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="979.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ReservController">
    <top>
       <HBox alignment="CENTER" prefHeight="39.0" prefWidth="979.0" style="-fx-background-color: #f0f8ff;" BorderPane.alignment="CENTER">
          <children>

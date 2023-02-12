@@ -30,9 +30,9 @@ public class Client implements java.io.Serializable {
 		this.idAdmin = idAdmin;
 	}
 
-	public Client(int idAdmin, String nomClient, String prenom, String contactClient, String domicileClient,
+	public Client(Integer idClient, String nomClient, String prenom, String contactClient, String domicileClient,
 			String codeCni) {
-		this.idAdmin = idAdmin;
+		this.idClient = idClient;
 		this.nomClient = nomClient;
 		this.prenom = prenom;
 		this.contactClient = contactClient;

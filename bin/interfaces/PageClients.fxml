@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="pageClients" maxHeight="-Infinity" maxWidth="979.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="979.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClientsController">
+<BorderPane fx:id="pageClients" maxHeight="-Infinity" maxWidth="979.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="979.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClientsController">
    <top>
       <HBox alignment="CENTER" prefHeight="39.0" prefWidth="979.0" style="-fx-background-color: #f0f8ff;" BorderPane.alignment="CENTER">
          <children>
@@ -56,7 +56,7 @@
                <children>
                   <VBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" VBox.vgrow="ALWAYS">
                      <children>
-                        <HBox alignment="CENTER" VBox.vgrow="SOMETIMES">
+                        <HBox alignment="CENTER" prefHeight="77.0" prefWidth="300.0" VBox.vgrow="SOMETIMES">
                            <children>
                               <Label lineSpacing="5.0" prefHeight="25.0" prefWidth="120.0" text="Rechercher :" textFill="#3d444b" HBox.hgrow="ALWAYS">
                                  <font>
@@ -212,10 +212,10 @@
                   <Insets bottom="15.0" />
                </padding>
             </VBox>
-            <TableView prefWidth="498.0" HBox.hgrow="SOMETIMES">
+            <TableView fx:id="clientTable" onMouseClicked="#clienSelected" prefWidth="498.0" HBox.hgrow="SOMETIMES">
               <columns>
                 <TableColumn fx:id="colnmId" maxWidth="150.0" minWidth="-1.0" prefWidth="-1.0" text="Id" />
-                <TableColumn fx:id="colnmNum" maxWidth="200.0" minWidth="-1.0" prefWidth="195.20003509521484" text="Numéro" />
+                <TableColumn fx:id="colnmNum" maxWidth="200.0" minWidth="-1.0" prefWidth="195.20003509521484" text="CNI" />
                   <TableColumn fx:id="colnmNom" maxWidth="200.0" minWidth="-1.0" prefWidth="195.20003509521484" text="Nom" />
                   <TableColumn fx:id="colnmPrenom" maxWidth="200.0" minWidth="-1.0" prefWidth="49.599945068359375" text="Prénom" />
                   <TableColumn fx:id="colnmContact" maxWidth="200.0" minWidth="-1.0" prefWidth="175.199951171875" text="Contact" />

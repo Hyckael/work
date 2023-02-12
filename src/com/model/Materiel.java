@@ -24,7 +24,8 @@ public class Materiel implements java.io.Serializable {
 	public Materiel() {
 	}
 
-	public Materiel(String nomMateriel, String descMateriel, Float prix, Integer quantite) {
+	public Materiel(Integer idMateriel, String nomMateriel, String descMateriel, Float prix, Integer quantite) {
+		this.idMateriel = idMateriel;
 		this.nomMateriel = nomMateriel;
 		this.descMateriel = descMateriel;
 		this.prix = prix;

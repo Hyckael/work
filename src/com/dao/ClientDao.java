@@ -24,6 +24,7 @@ public class ClientDao implements IClientDoa {
 
 	private ResultSet result;
 	
+	
     // save Student
     // get All Students
     // get Student By Id
@@ -112,13 +113,8 @@ public class ClientDao implements IClientDoa {
 		// TODO Auto-generated method stub
 		Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            // start the transaction
             transaction = session.beginTransaction();
-
-            // save student object
             session.saveOrUpdate(client);
-
-            // commit the transaction
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
@@ -160,22 +156,11 @@ public class ClientDao implements IClientDoa {
 	@Override
 	public List<Client> getAllSclient() {
 		// TODO Auto-generated method stub
-		Transaction transaction = null;
-        List < Client > client = null;
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            // start the transaction
-            transaction = session.beginTransaction();
-
-            // get client
-            client = session.createQuery("from client").list();
-            
-            transaction.commit();
-        } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
-            }
-        }
-        return client;
+		 Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+		 session.beginTransaction();
+		 List<Client> result = session.createQuery("from Client", Client.class).getResultList();
+		 session.getTransaction().commit();
+		 return result;
 	}
 
 
