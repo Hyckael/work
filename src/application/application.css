@@ -1,0 +1,84 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.trans{
+	-fx-background-color: transparent;
+}
+.linear-grad{
+	-fx-background-color: linear-gradient(to bottom left, #6f4cbb, #431fa0);
+}
+.linear-grad-header{
+	-fx-background-color: linear-gradient(to bottom left, #431fa0, #6f4cbb);
+}
+.button{
+	-fx-background-color: aliceblue;
+	-fx-text-fill: #6f4cbb;
+}
+.border{
+	-fx-background-radius: 10;
+	-fx-border-radius: 10;
+}
+.button:hover{
+	-fx-text-fill: #431fa0;
+	-fx-opacity: .9;
+}
+.button:pressed{
+	-fx-background-color: #6f4cbb;
+	-fx-text-fill: aliceblue;
+}
+
+.asked-button{
+	-fx-background-color: #6f4cbb;
+	-fx-background-radius: 20;
+	-fx-border-radius: 20;
+	-fx-border-color: #5f4cbb;
+	-fx-text-fill: #e4eefd;
+}
+.asked-button:hover{
+	-fx-opacity: .9;
+}
+.asked-button:pressed{
+	-fx-background-color: #e4eefd;
+	-fx-background-radius: 20;
+	-fx-border-radius: 20;
+	-fx-border-color: #5f4cbb;
+	-fx-text-fill: #6f4cbb;
+}
+.choice-button{
+	-fx-background-color: #6f4cbb;
+	-fx-text-fill: #e4eefd;
+}
+.choice-button:hover{
+	-fx-text-fill: aliceblue;
+	-fx-opacity: .9;
+}
+.choice-button:pressed{
+	-fx-background-color: #e4eefd;
+	-fx-border-color: #5f4cbb;
+	-fx-text-fill: #6f4cbb;
+}
+.choice-button:focus{
+	-fx-border-color: #5f4cbb;
+}
+.forget-button{
+	-fx-background-color: transparent;
+	-fx-text-fill: #6f4cbb;
+}
+.forget-button:pressed{
+	-fx-background-color: transparent;
+	-fx-text-fill: #a11717;
+}
+.input{
+	-fx-background-color: transparent;
+	-fx-border-color: #6f4cbb;
+	-fx-border-width: 0px 0px 1px 0px;
+}
+.input:pressed{
+	-fx-background-color: transparent;
+	-fx-border-color: #6f4cbb;
+	-fx-border-width: 0px 0px 1px 0px;
+}
+.input:active{
+	-fx-background-color: transparent;
+	-fx-border-color: #6f4cbb;
+	-fx-border-width: 0px 0px 1px 0px;
+}

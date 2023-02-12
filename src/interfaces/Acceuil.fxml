@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="pageAccueil" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AcceuilController">
+   <top>
+      <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="900.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnBack" mnemonicParsing="false" onKeyPressed="#goBack" onMouseClicked="#goBack" style="-fx-background-color: transparent;" styleClass="forget-button" stylesheets="@../application/application.css" text="Retour" HBox.hgrow="ALWAYS">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/icons8_back_to_30px.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <FlowPane alignment="TOP_CENTER" prefHeight="57.0" prefWidth="900.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" text="Que faisons-nous maintenant ?" textAlignment="CENTER" textFill="#105991c9">
+                     <font>
+                        <Font name="Agency FB Bold" size="25.0" />
+                     </font>
+                  </Label>
+               </children>
+            </FlowPane>
+            <GridPane alignment="CENTER" VBox.vgrow="ALWAYS">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="621.8000793457031" minWidth="5.0" prefWidth="478.1999877929687" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="435.9999755859375" minWidth="5.0" prefWidth="421.6000122070312" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="131.4" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="211.4" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Button fx:id="btnGestMat" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#goMaterielPage" prefWidth="181.0" stylesheets="@../application/application.css" text="Gestion Matériels" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="108.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8_subwoofer_480px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnReserv" alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="80.0" mnemonicParsing="false" onAction="#goReservPage" prefWidth="181.0" stylesheets="@../application/application.css" text="Réservations" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="108.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8_reserve_480px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnGestClient" alignment="TOP_CENTER" contentDisplay="TOP" layoutX="410.0" layoutY="80.0" mnemonicParsing="false" onAction="#goClientPage" prefWidth="181.0" stylesheets="@../application/application.css" text="Gestion Clients" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="108.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8_users_480px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnGestStock" alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="80.0" mnemonicParsing="false" onAction="#goStockPage" prefWidth="181.0" stylesheets="@../application/application.css" text="Gestion Stock" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="68.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8_warehouse_480px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnHist" alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="247.0" mnemonicParsing="false" onAction="#goHistoryPage" prefWidth="181.0" stylesheets="@../application/application.css" text="Historiques" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="108.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8_accounting_480px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnHelp" alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="413.0" mnemonicParsing="false" onAction="#goHelpPage" prefWidth="181.0" stylesheets="@../application/application.css" text="Aide" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="Tahoma" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="108.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8_help_480px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <effect>
+                  <DropShadow blurType="TWO_PASS_BOX" height="15.0" radius="7.0" spread="0.02" width="15.0">
+                     <input>
+                        <Blend />
+                     </input>
+                  </DropShadow>
+               </effect>
+            </GridPane>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox alignment="CENTER_LEFT" spacing="2.0" style="-fx-background-color: #7c51f4;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane HBox.hgrow="ALWAYS">
+               <children>
+                  <Label alignment="CENTER" graphicTextGap="0.0" text="MyRegistry" textFill="#f8f0ff">
+                     <font>
+                        <Font name="Tahoma" size="12.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../assets/icons8_connect_develop_512px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </children>
+            </Pane>
+            <ImageView fitHeight="20.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8_copyright_48px.png" />
+               </image>
+            </ImageView>
+            <Label text="All rights Reserved" textFill="ALICEBLUE">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" top="5.0" />
+         </padding>
+         <BorderPane.margin>
+            <Insets top="16.0" />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+</BorderPane>
